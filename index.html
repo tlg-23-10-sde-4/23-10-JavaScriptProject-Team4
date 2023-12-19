@@ -8,6 +8,78 @@
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" async defer></script>
   </head>
+  <header id="navbar_header">
+    <img
+      id="icon"
+      src="https://cdn-icons-png.flaticon.com/512/3448/3448102.png"
+      alt="cooking icon"
+    />
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid" class="navbar-brand">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Recipes
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#">Recipies by Category</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Recipes by Ingredient</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="">Random Recipe</a>
+                </li>
+                <li><a class="dropdown-item" href="#">7 Day Meal Plan</a></li>
+                <li><a class="dropdown-item" href="#">Shopping List</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Craving ideas?"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div><p></p></div>
+  </header>
   <body>
     <div id="body_display">
       <h1 id="page_header">TJ'S Buffet for the Intestinally Fortified</h1>
