@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
   $("nav ul li a:not(:only-child)").click(function (e) {
     $(this).siblings(".nav-dropdown").toggle();
@@ -14,3 +15,4 @@ $(document).ready(function () {
     this.classList.toggle("active");
   });
 });
+

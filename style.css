@@ -1,11 +1,14 @@
 
+body {
+    display: flex;
+    justify-content: center;
+}
 #body_display {
     display: flex;
     flex-direction: column;    
     align-items: center;    
     width: 100%;
-    height: 100vw;
-    
+    height: 100vw;    
     background-image: url(https://www.parker.edu/wp-content/uploads/2021/10/Black-concrete-web-2.jpg);
     }
 
@@ -13,8 +16,9 @@
     display: flex;
     justify-content: center;
     text-align: center;
-    padding: 5px;
+    padding: 5px;    
     margin: 5%;
+    margin-top: 75px;
     width: 45%;
     background-image: url(https://images.unsplash.com/photo-1621291726769-86a0b3fc6357?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
     border: groove 10px rgb(62, 42, 18);
@@ -53,7 +57,7 @@
 }
 
 #side_scrollers > div {
-    height: 93.5%;
+    height: 92.5%;
     width: 120px;
     padding: 10px;
     display: flex;   
@@ -61,7 +65,7 @@
     justify-content: center;
     position: fixed;
     right: 2vw;
-    top: 2vw;
+    top: 3vw;
     border: solid 10px rgb(62, 42, 18);
     border-radius: 10px;
 }
@@ -117,8 +121,3 @@
     height: 100%; 
     object-fit: cover; /* Ensures image covers the img-wrapper area */
   }
-  
-
-  
-
-  
