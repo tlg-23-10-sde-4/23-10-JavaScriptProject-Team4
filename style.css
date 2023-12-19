@@ -57,7 +57,7 @@ body {
 
 #side_scrollers > div {
   height: 92.5%;
-  width: 120px;
+  width: 400px;
   padding: 10px;
   display: flex;
   background-color: burlywood;
@@ -73,9 +73,14 @@ body {
   left: 2vw;
 }
 
+.accordion {
+  width: 100%;
+}
+
 /* Carousel container styles */
 .carousel {
   width: 100%; /* Full width */
+  height: fit-content;
   max-width: 600px; /* Maximum width */
   margin: 2rem auto; /* Centering the carousel */
   background-color: #ffffff; /* White background for a clean look */
