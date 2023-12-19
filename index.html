@@ -130,26 +130,29 @@
 
             <section id="side_scrollers">
               <div id="right_side_bar">
-                <div class="accordion" id="accordionPanelsStayOpenExample">
+                <div class="accordion" id="accordionExample">
                   <div class="accordion-item">
                     <h2 class="accordion-header">
                       <button
                         class="accordion-button"
                         type="button"
                         data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseOne"
+                        data-bs-target="#collapseOne"
                         aria-expanded="true"
-                        aria-controls="panelsStayOpen-collapseOne"
+                        aria-controls="collapseOne"
                       >
-                        Breakfast menu
+                        Breakfast
                       </button>
                     </h2>
                     <div
-                      id="panelsStayOpen-collapseOne"
+                      id="collapseOne"
                       class="accordion-collapse collapse show"
+                      data-bs-parent="#accordionExample"
                     >
                       <div class="accordion-body">
-                        <strong>Here is your selected breakfast recipes</strong>
+                        <strong
+                          >Here is your selected Breakfast recipes.</strong
+                        >
                         <div id="carouselExampleControls" class="carousel">
                           <div class="carousel-inner">
                             <div class="carousel-item active">
@@ -385,19 +388,20 @@
                         class="accordion-button collapsed"
                         type="button"
                         data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseTwo"
+                        data-bs-target="#collapseTwo"
                         aria-expanded="false"
-                        aria-controls="panelsStayOpen-collapseTwo"
+                        aria-controls="collapseTwo"
                       >
-                        Lunch menu
+                        Lunch
                       </button>
                     </h2>
                     <div
-                      id="panelsStayOpen-collapseTwo"
+                      id="collapseTwo"
                       class="accordion-collapse collapse"
+                      data-bs-parent="#accordionExample"
                     >
                       <div class="accordion-body">
-                        <strong>Here is your selected Lunch recipes</strong>
+                        <strong>Here is your selected Lunch recipes.</strong> It
                         <div id="carouselExampleControls" class="carousel">
                           <div class="carousel-inner">
                             <div class="carousel-item active">
@@ -633,19 +637,20 @@
                         class="accordion-button collapsed"
                         type="button"
                         data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseThree"
+                        data-bs-target="#collapseThree"
                         aria-expanded="false"
-                        aria-controls="panelsStayOpen-collapseThree"
+                        aria-controls="collapseThree"
                       >
-                        Dinner menu
+                        Dinner
                       </button>
                     </h2>
                     <div
-                      id="panelsStayOpen-collapseThree"
+                      id="collapseThree"
                       class="accordion-collapse collapse"
+                      data-bs-parent="#accordionExample"
                     >
                       <div class="accordion-body">
-                        <strong>Here is your selected Dinner recipes</strong>
+                        <strong>Here is your selected Dinner recipes.</strong>
                         <div id="carouselExampleControls" class="carousel">
                           <div class="carousel-inner">
                             <div class="carousel-item active">
