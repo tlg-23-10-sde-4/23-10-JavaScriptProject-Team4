@@ -4,7 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TJ'S Buffet for the Intestinally Fortified</title>
-
+    <!-- navbar jquery script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="./script.js" async defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      async
+      defer
+    ></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -23,7 +30,7 @@
         src="https://cdn-icons-png.flaticon.com/512/3448/3448102.png"
         alt="cooking icon"
       />
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <nav id="nav_main" class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid" class="navbar-brand">
           <button
             class="navbar-toggler"
@@ -56,7 +63,11 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li>
-                    <a class="dropdown-item" href="#">Recipies by Category</a>
+                    <a
+                      class="dropdown-item recipe-category"
+                      href="#recipe_by_category"
+                      >Recipies by Category</a
+                    >
                   </li>
                   <li>
                     <a class="dropdown-item" href="#">Recipes by Ingredient</a>
@@ -73,7 +84,7 @@
                 </ul>
               </li>
             </ul>
-            <form class="d-flex" role="search">
+            <form id="searchbox" class="d-flex" role="search">
               <input
                 class="form-control me-2"
                 type="search"
@@ -105,7 +116,12 @@
             <p id="recipe_output"></p>
             <button id="try_again_btn">Try a different recipe</button>
             <button id="add_to_plan_btn">Add recipe to meal plan</button>
-            <img src="..." alt="" id="recipe_pic" />
+            <!-- Scott: commented out to avoid errors since so img src for now -->
+            <!-- <img
+              src="..."
+              alt="..."
+              id="recipe_pic"
+            /> -->
           </div>
           <div id="ingredients">
             <input type="text" placeholder="Ingredient" />
@@ -316,10 +332,13 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
+      <section id="recipe_by_category" class="d-flex">
+        <div id="categories_container"></div>
+        <h1 id="category_container"></h1>
+        <div id="recipe_container" class="d-flex flex-wrap"></div>
+      </section>
     </div>
 
-    <script src="./script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </body>
 </html>
-
