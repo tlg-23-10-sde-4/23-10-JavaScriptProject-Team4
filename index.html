@@ -3,12 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>TJ'S Buffet for the Intestinally Fortified</title>
 
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" async defer></script>
   </head>
   <body>
-    <div><p></p></div>
+    <div id="body_display">
+      <h1 id="page_header">TJ'S Buffet for the Intestinally Fortified</h1>
+
+      <section id="display_container">
+        <div id="recipe_disc_box">
+          <textarea
+            name=""
+            placeholder="Describe your dream dish"
+            id="text_input"
+            cols="30"
+            rows="10"
+          ></textarea>
+          <p id="recipe_output"></p>
+          <button id="try_again_btn">Try a different recipe</button>
+          <button id="add_to_plan_btn">Add recipe to meal plan</button>
+          <img src="..." alt="" id="recipe_pic" />
+        </div>
+        <div id="ingredients">
+          <input type="text" placeholder="Ingredient" />
+          <button id="add_ingredient">Add ingredient</button>
+          <button id="add_another">Add another ingredient</button>
+        </div>
+        <section id="side_scrollers">
+          <div id="right_side_bar">
+            <p>put the breakfast lunch and dinner hamburgers here</p>
+          </div>
+          <div id="left_side_bar">
+            <p>put the menu for user, favorites, ect.</p>
+          </div>
+        </section>
+      </section>
+    </div>
   </body>
 </html>
