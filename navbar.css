@@ -1,0 +1,14 @@
+#navbar_header {
+    display: flex;
+    flex-direction: row;
+    padding-left: 50px;
+    padding-right: 50px;
+    position: fixed;
+    background-color: white;
+    border: solid 5px rgb(62, 42, 18);
+}
+#icon {
+    height: 60px;
+    width: 50px;
+    background-color: white;
+}
