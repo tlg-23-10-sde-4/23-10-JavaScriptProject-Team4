@@ -1,76 +1,61 @@
-$(document).ready(function () {
-  $("nav ul li a:not(:only-child)").click(function (e) {
-    $(this).siblings(".nav-dropdown").toggle();
-    e.stopPropagation();
+var multipleCardCarousel = document.querySelector(
+  "#carouselExampleControls"
+);
+if (window.matchMedia("(min-width: 768px)").matches) {
+  var carousel = new bootstrap.Carousel(multipleCardCarousel, {
+    interval: false,
   });
-
-  $("html").click(function () {
-    $(".nav-dropdown").hide();
+  var carouselWidth = $(".carousel-inner")[0].scrollWidth;
+  var cardWidth = $(".carousel-item").width();
+  var scrollPosition = 0;
+  $("#carouselExampleControls .carousel-control-next").on("click", function () {
+    if (scrollPosition < carouselWidth - cardWidth * 4) {
+      scrollPosition += cardWidth;
+      $("#carouselExampleControls .carousel-inner").animate(
+        { scrollLeft: scrollPosition },
+        600
+      );
+    }
   });
-  $("#nav-toggle").click(function () {
-    $("nav ul").slideToggle();
+  $("#carouselExampleControls .carousel-control-prev").on("click", function () {
+    if (scrollPosition > 0) {
+      scrollPosition -= cardWidth;
+      $("#carouselExampleControls .carousel-inner").animate(
+        { scrollLeft: scrollPosition },
+        600
+      );
+    }
   });
-  $("#nav-toggle").on("click", function () {
-    this.classList.toggle("active");
-  });
-});
-
-function createCategoryButtons() {
-  document.getElementById("categories_container").innerHTML = "";
-  fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
-    .then((response) => response.json())
-    .then((data) => {
-      const categories = data.categories;
-      categories.forEach((category) => {
-        const btn = document.createElement("button");
-        btn.textContent = category.strCategory;
-        btn.classList.add("category_btn");
-        categories_container.appendChild(btn);
-      });
-    })
-    .catch((error) => {
-      console.error("Error fetching categories:", error);
-    });
+} else {
+  $(multipleCardCarousel).addClass("slide");
 }
 
-function displayRecipes(category) {
-  category_container.textContent = category;
+const header = document.querySelector("header");
 
-  // Clear existing recipes
-  recipe_container.innerHTML = "";
+window.addEventListener("scroll", function() {
+  header.classList.toggle("sticky", window.scrollY > 0);
+})
 
-  const API_URL = `https://www.themealdb.com/api/json/v1/1/search.php?s=${category}`;
-  fetch(API_URL)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data); // Add this line for debugging
+let menu = document.querySelector("#menu-icon");
+let navbar = document.querySelector(".navbar");
 
-      const recipes = data.meals;
-      if (!recipes) {
-        console.error("No recipes found for the category:", category);
-        return;
-      }
+menu.onclick = () => {
+  menu.classList.toggle("bx-x");
+  navbar.classList.toggle("open");
+};
 
-      recipes.forEach((recipe) => {
-        const recipeDiv = document.createElement("div");
-        recipeDiv.textContent = recipe.strMeal;
-        recipe_container.appendChild(recipeDiv);
-      });
-    })
-    .catch((errors) => {
-      console.error("Error fetching recipes:", errors);
-    });
-}
+window.onscroll = () => {
+  menu.classList.remove("bx-x");
+  navbar.classList.remove("open");
+};
 
-nav_main.addEventListener("click", (evt) => {
-  if (evt.target.classList.contains("recipe-category")) {
-    createCategoryButtons();
-    displayRecipes(""); // Display recipes for an empty category initially
-  }
-});
+const sr = ScrollReveal ({
+  distance: '60px',
+  duration: 2500,
+  reset: true
+})
 
-categories_container.addEventListener("click", (evt) => {
-  if (evt.target.classList.contains("category_btn")) {
-    displayRecipes(evt.target.textContent);
-  }
-});
+sr.reveal('.home-text', {delay:200, origin:'left'});
+sr.reveal('.home-img', {delay:200, origin:'right'});
+
+sr.reveal('.container, .about, .menu, .contact', {delay:200, origin:'bottom'});
