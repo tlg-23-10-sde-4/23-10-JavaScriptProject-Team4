@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TJ'S Buffet for the Intestinally Fortified</title>
-    <link rel="stylesheet" href="style.css" />
+   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
  
     <script
@@ -30,7 +30,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="navbarstyle.css">
-    
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     
@@ -99,10 +99,10 @@
                       >
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#recipe_by_ingredient">Recipes by Ingredient</a>
+                      <a class="dropdown-item recipe-area" href="#recipe_by_area">Recipes by Area</a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="">Random Recipe</a>
+                      <a class="dropdown-item random-recipe" href="">Random Recipe</a>
                     </li>
                     <li><a class="dropdown-item" href="#">7 Day Meal Plan</a></li>
                     <li><a class="dropdown-item" href="#">Shopping List</a></li>
@@ -215,7 +215,7 @@
           At our innovative culinary corner, we harness the power of artificial intelligence to transform your pantry picks into delectable dishes. Just type in the ingredients you have on hand, and our smart recipe generator will craft a custom recipe tailored to your tastes and inventory. Say goodbye to food waste and hello to endless cooking possibilities with our AI-driven kitchen companion!
         </p>
         
-        <form action="/submit-your-text" method="post">
+        <form  action="/submit-your-text" method="post">
           <textarea id="largeTextbox" name="userText" rows="6" cols="50" placeholder="Enter your text here..."></textarea>
           <br>
           <button type="submit">Submit Text</button>
@@ -229,12 +229,11 @@
       <h1 id="category_container"></h1>
       <div id="recipe_container" class="d-flex flex-wrap"></div>
     </section>
-    <section id="recipe_by_ingredient">
-      <div id="checkbox">
-        <div id="checked_recipes"></div>
-      </div>
+    <section id="recipe_by_area">
+      <div id="area_container"></div>
+        <h1 id="area_name"></h1>
+        <div id="area_recipes"></div>
     </section>
-  </div>
     <!--contact bar-->
     <section class="contact" id="contact">
       <div class="main-contact">

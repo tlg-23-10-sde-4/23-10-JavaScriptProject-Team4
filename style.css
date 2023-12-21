@@ -370,13 +370,13 @@ header.sticky {
   border: 2px solid green;
 }
 
-#recipe_by_ingredient {
+#recipe_by_area_container {
   border: 2px dashed teal;
 }
-#checkbox {
+#area_container {
   border: 2px dashed red;
 }
-#checked_recipes {
+#area_name {
   border: 2px dashed chartreuse;
 }
 
