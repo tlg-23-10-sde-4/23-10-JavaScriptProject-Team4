@@ -56,7 +56,7 @@ span {
   font-weight: 600;
   padding: 5px 10px;
   margin: 2px 25px;
-  border-bottom: 2px solid transparent; 
+  border-bottom: 2px solid transparent;
   transition: all 0.38s ease;
 }
 
@@ -120,7 +120,7 @@ section {
   margin-bottom: 2.3rem;
 }
 
-.btn{
+.btn {
   display: inline-block;
   padding: 14px 26px;
   background-color: orange;
@@ -153,20 +153,20 @@ header.sticky {
   line-height: 32px;
 }
 
-.mid-container{
+.mid-container {
   margin-top: 15rem;
   margin-bottom: 5rem;
 }
 
 .container-box {
-  display: inline-grid; 
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  
+  display: inline-grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 50rem;
   align-items: center;
   margin-top: 4rem;
 }
 
-.c-mainbx{
+.c-mainbx {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -175,15 +175,14 @@ header.sticky {
   height: auto;
   background: var(--bg-color);
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-  transition: all .38s ease;
+  transition: all 0.38s ease;
 }
 
 /* .container-img {
-  width: 100%; 
-  height: auto; 
-} 
+  width: 100%;
+  height: auto;
+}
 */
-
 
 .about {
   display: grid;
@@ -382,34 +381,33 @@ header.sticky {
 }
 
 .category_btn {
-  background-color: #f2f2f2; 
-  color: #333; 
-  border: 1px solid #ddd; 
-  border-radius: 5px; 
-  padding: 10px 20px; 
-  margin: 5px; 
-  cursor: pointer; 
-  transition: all 0.3s ease; 
-  font-size: 16px; 
-  font-family: 'Raleway', sans-serif; 
+  background-color: #f2f2f2;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
 }
 
 .category_btn:hover {
-  background-color: #e7e7e7; 
-  color: #000; 
-  border-color: #ccc; 
+  background-color: #e7e7e7;
+  color: #000;
+  border-color: #ccc;
 }
 
 #categories_container {
-  display: block; 
-  flex-wrap: wrap; 
-  justify-content: center; 
-  gap: 10px; 
+  display: block;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
 
 #categories_container {
   padding: 20px;
-  
 }
 /* Text box for Type Ingredidents */
 button[type="submit"] {
@@ -420,11 +418,11 @@ button[type="submit"] {
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
-  font-family: 'Raleway', sans-serif; 
-  transition: background-color 0.3s; 
-  margin-top: 10px; 
+  font-family: "Raleway", sans-serif;
+  transition: background-color 0.3s;
+  margin-top: 10px;
 }
 
 button[type="submit"]:hover {
-  background-color: #45a049; 
+  background-color: #45a049;
 }
