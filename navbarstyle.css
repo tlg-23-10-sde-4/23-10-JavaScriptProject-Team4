@@ -1,14 +1,24 @@
 /* scott added style for navbar */
-* {
+/* * {
   margin: 0;
   padding: 0;
   font-family: Segoe UI;
+} */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
 }
 
-.nav-bar {
+/* .nav-bar {
   height: 70px;
   background: burlywood;
-}
+} */
 
 .brand {
   float: left;
@@ -23,7 +33,7 @@
   color: white;
 }
 
-.nav-container {
+/* .nav-container {
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -47,20 +57,19 @@ nav ul li a {
   line-height: 70px;
   background: burlywood;
   text-decoration: none;
-  color: #fff;
+  color: white;
 }
 
 nav ul li a:hover {
-  background: #2ab1ce;
-  color: #fff;
-}
+  color: white;
+} */
 
 nav ul li a:not(:only-child):after {
   content: "▼";
   padding-left: 5px;
 }
 
-nav ul li ul li {
+/* nav ul li ul li {
   min-width: 190px;
 }
 
@@ -73,6 +82,7 @@ nav ul li ul li a {
   position: absolute;
   display: none;
   z-index: 1;
+  width: auto;
 }
 
 .nav-mobile {
@@ -98,7 +108,7 @@ nav ul li ul li a {
   position: absolute;
   display: block;
   content: "";
-  background: #fff;
+  background: white;
   height: 5px;
   width: 35px;
   transition: all 300ms ease-in-out;
@@ -127,9 +137,9 @@ nav ul li ul li a {
 
 #nav-toggle.active span::after {
   transform: rotate(-45deg);
-}
+} */
 
-@media only screen and (max-width: 768px) {
+/* @media only screen and (max-width: 768px) {
   .nav-mobile {
     display: block;
   }
@@ -165,8 +175,20 @@ nav ul li ul li a {
   .nav-list {
     display: block !important;
   }
-}
+} */
 #icon {
   width: 30px;
   height: 30px;
 }
+
+.dropdown-toggle::after {
+  border-top: none;
+}
+
+/* #nav_main{
+  width: 100%;
+} */
+
+/* #navbar_header{
+  max-width: 100%;
+} */
