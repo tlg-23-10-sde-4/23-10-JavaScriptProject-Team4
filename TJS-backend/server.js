@@ -50,10 +50,25 @@ app.get("/invalid", function (req, res) {
 });
 
 //adding things to categories functions
+
 app.post("/addfavorites", function (req, res) {
-  favorites.push(req.body);
+  const userId = req.body.userId;
+  const fav = req.body.fav;
+
+  if (favorites[userId] === undefined) {
+    favorites[userId] = [];
+  }
+  if (Array.isArray(fav)) {
+    // Concatenate the arrays
+    favorites[userId] = [...favorites[userId], ...fav];
+  } else {
+    // Assume fav is a single item, push it to the array
+    favorites[userId].push(fav);
+  }
+
   res.redirect("/addfavorites");
 });
+
 app.get("/addfavorites", function (req, res) {
   res.send(favorites);
 });

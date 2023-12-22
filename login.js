@@ -17,6 +17,7 @@ function createLogInPage() {
 }
 signup.addEventListener("click", function () {
   const usernametxt = username.value;
+  userIcon.textContent = usernametxt;
   const passwordtxt = password.value;
   const userIdValue = usernametxt.concat(passwordtxt);
   const userId = { userId: userIdValue };
@@ -36,6 +37,7 @@ signup.addEventListener("click", function () {
 
 login.addEventListener("click", function () {
   const usernametxt = username.value;
+  userIcon.textContent = usernametxt;
   const passwordtxt = password.value;
   const userIdValue = usernametxt.concat(passwordtxt);
   const userId = { userId: userIdValue };
