@@ -228,30 +228,64 @@ function updateModal(recipe) {
   document.getElementById("modal-body").innerHTML = modalBodyContent;
   exampleModalCenter.addEventListener("click", (evt) => {
     if (evt.target.classList.contains("fav_btn")) {
+      document.querySelector(".fav_btn").addEventListener("click", function () {
+        const storedMeals = localStorage.getItem("meals");
+        // Check if storedMeals is not null or undefined
+        const meals = storedMeals ? JSON.parse(storedMeals) : [];
+        console.log("Meals Before:", meals);
+
+        // Check if the meal ID already exists in the array
+        const mealId = recipe.idMeal;
+        if (!meals.includes(mealId)) {
+          meals.push(mealId);
+
+          // Save the updated meals array back to local storage
+          console.log("Meals After", meals);
+        } else {
+          console.log("Meal already exists:", mealId);
+        }
+        localStorage.setItem("meals", JSON.stringify(meals));
+      });
       favorites.push(exampleModalCenter);
-      addFavorite();
+      // addFavorite(recipe.idMeal);
     }
 
     // Bootstrap's way to show the modal using jQuery
     $("#exampleModalCenter").modal("show");
   });
 }
-function addFavorite() {
-  const currentUser = userIcon.textContent;
-  console.log(currentUser);
-  const userFav = { userId: currentUser, fav: favorites };
-  console.log(userFav);
-  fetch(`http://localhost:3001/addfavorites`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(userFav),
-  })
-    .then((response) => response.json())
-    .then((responsestate) => console.log(responsestate[currentUser]))
-    .catch((err) => {
-      console.log(err);
-    });
-}
-addFavorite();
+
+const addSaveMeals = async () => {
+  const storedMeals = JSON.parse(localStorage.getItem("meals")) || [];
+
+  const parentEl = document.getElementById("append-title");
+
+  for (i = 0; i < storedMeals.length; i++) {
+    const response = await fetch(
+      `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${storedMeals[i]}`,
+      {
+        // Set the ID to the storedMeals[i]
+        method: "GET",
+      }
+    );
+
+    const data = await response.json();
+    console.log(storedMeals[i]);
+    console.log(data.meals[0]);
+    const usableData = data.meals[0];
+
+    const divEl = document.createElement("div");
+    const titleEl = document.createElement("h1");
+    titleEl.innerText = usableData.strMeal;
+    // const bodyEl = document.createElement("p");
+    // bodyEl.textContent = data.whateverThisShouldBe;
+
+    divEl.appendChild(titleEl);
+    // divEl.appendChild(bodyEl);
+
+    parentEl.appendChild(divEl);
+  }
+
+  // call this when ready
+};
+addSaveMeals();
