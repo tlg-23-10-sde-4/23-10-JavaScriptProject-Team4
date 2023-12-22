@@ -1,6 +1,6 @@
 #loginPage {
   display: flex;
-  background-color: rgb(33, 33, 33);
+  background-image: url(https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
   width: 100vw;
   height: 100%;
   position: fixed;
@@ -9,7 +9,7 @@
 }
 #login_signup_card {
   display: flex;
-  background-color: rgb(75, 69, 108);
+  background-image: url(https://images.unsplash.com/photo-1487147264018-f937fba0c817?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
   width: 400px;
   height: 600px;
   margin-top: 200px;
@@ -20,13 +20,13 @@
   flex-direction: column;
 }
 #buttons_box {
-  background-color: brown;
   padding: 2px;
 }
 #buttons_box > button {
   border: 5px solid black;
 }
 input {
+  border: solid 5px black;
   padding: 5px;
   background-color: rgb(145, 143, 143);
 
