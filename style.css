@@ -1,7 +1,14 @@
 .btn_fav {
   background-color: #45a049;
 }
-
+#userIconDiv {
+  position: fixed;
+  left: 88vw;
+  background-color: whitesmoke;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: solid #ffa500 10px;
+}
 * {
   padding: 0;
   margin: 0;
@@ -14,7 +21,7 @@
 
 :root {
   --text-color: Black;
-  --main-color: orange;
+  --main-color: #ffa500;
   --bg-color: white;
   --big-font: 4.5rem;
   --h2-font: 2.6rem;
