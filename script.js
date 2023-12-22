@@ -75,6 +75,7 @@ function displayRecipes(category) {
           recipeDetailsArray.forEach((recipeDetails, index) => {
             const recipeDiv = document.createElement("div");
             recipeDiv.classList.add("recipe");
+            recipeDiv.innerHTML = `<button id="fav_btn" type="button" class="btn-fav">Add to favorites</button>`;
 
             // Display the name of the recipe
             const recipeName = document.createElement("h3");
