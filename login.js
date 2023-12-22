@@ -38,13 +38,13 @@ login.addEventListener("click", function () {
   const usernametxt = username.value;
   const passwordtxt = password.value;
   const userIdValue = usernametxt.concat(passwordtxt);
-  const userID = { userId: userIdValue };
+  const userId = { userId: userIdValue };
   fetch(`http://localhost:3001/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(userID),
+    body: JSON.stringify(userId),
   })
     .then((response) => response.json())
     .then((responsestate) => {
