@@ -5,8 +5,6 @@ window.addEventListener("scroll", function () {
   header.classList.toggle("sticky", window.scrollY > 0);
 });
 
-// Scott JS Func
-// *******************************************************************
 $(document).ready(function () {
   $("nav ul li a:not(:only-child)").click(function (e) {
     $(this).siblings(".nav-dropdown").toggle();

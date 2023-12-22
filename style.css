@@ -69,6 +69,7 @@ span {
   margin: 2px 25px;
   border-bottom: 2px solid transparent;
   transition: all 0.38s ease;
+  max-width: fit-content;
 }
 
 .navbar a:hover {
@@ -76,28 +77,10 @@ span {
   color: var(--main-color);
 }
 
-.h-icons {
-  display: flex;
-  align-items: center;
-  padding: 10px 22px;
-  background: var(--main-color);
-  border-radius: 5rem;
+.custom-background{
+  --bs-bg-opacity: 0;
+  background-color: rgba(255,255,255,0.5) !important; 
 }
-
-.h-icons i {
-  font-size: 22px;
-  color: var(--bg-color);
-  margin-right: 15px;
-  margin-left: 8px;
-}
-
-/* #menu-icon {
-  font-size: 32px;
-  color: var(--bg-color);
-  z-index: 10001;
-  cursor: pointer;
-  display: none;
-} */
 
 section {
   padding: 90px 15% 80px;
@@ -116,6 +99,7 @@ section {
 .home-img img {
   width: 100%;
   height: auto;
+  margin-top: 5rem;
 }
 
 .home-text h1 {
@@ -146,6 +130,14 @@ section {
   letter-spacing: 1px;
 }
 
+.btn-random{
+  --bs-btn-hover-bg: black !important;
+}
+
+.btn-search{
+  --bs-btn-hover-bg: black;
+}
+
 header.sticky {
   padding: 10px 15%;
   background: var(--bg-color);
@@ -169,6 +161,10 @@ header.sticky {
   margin-bottom: 5rem;
 }
 
+.custom-container{
+margin-top: 5rem;
+}
+
 .container-box {
   display: inline-grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -188,12 +184,6 @@ header.sticky {
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   transition: all 0.38s ease;
 }
-
-/* .container-img {
-  width: 100%;
-  height: auto;
-}
-*/
 
 .about {
   display: grid;
@@ -339,24 +329,22 @@ header.sticky {
   .card .img-wrapper {
     height: 17em;
   }
-  /* Scott added styles and boxes to easily see where API fetches will go  STOPPPPPP */
+
 }
 #recipe_by_category {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  /* max-width: fit-content; */
   max-height: 40%;
-  border: 2px solid blueviolet;
   order: -1;
   width: 100%;
+  margin-top: 5rem;
 }
 #recipe_container {
   display: flex;
   flex-direction: row;
   width: 50%;
-
-  border: 2px solid orange;
+  margin-top: 5rem;
   width: 100%;
 }
 .recipe {
@@ -364,8 +352,7 @@ header.sticky {
   padding: 15px;
 
   border-radius: 5px;
-  background-color: #ffac1c;
-  border: 2px solid red;
+  background-color: orange;
 }
 
 .recipe h3 {
@@ -383,24 +370,16 @@ header.sticky {
   line-height: 1.5;
   background-color: white;
   color: #666;
-  border: 2px solid green;
 }
-/* SCOTT ADD */
+
 #recipe_by_area {
   flex-wrap: wrap;
-  border: 2px dashed teal;
   display: flex;
   flex-direction: row;
 
   max-height: 40%;
   order: -1;
   width: 100%;
-}
-#area_container {
-  border: 2px dashed red;
-}
-#area_name {
-  border: 2px dashed chartreuse;
 }
 
 .category_btn,
@@ -450,7 +429,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #45a049;
+  background-color: black;
 }
 
 #category_container {

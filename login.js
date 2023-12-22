@@ -1,4 +1,4 @@
-createLogInPage();
+// createLogInPage();
 
 function createLogInPage() {
   const loginPage = document.createElement("div");
