@@ -38,7 +38,7 @@
 
       <header id="navbar_header">
         <a href="#" class="logo">Fortified <span> Recipes</span></a>
-        <nav id="nav_main" class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav id="nav_main" class="navbar navbar-expand-lg bg-body-tertiary custom-background">
           <div class="container-fluid" class="navbar-brand">
             <button
               class="navbar-toggler"
@@ -95,7 +95,7 @@
                   placeholder="Craving ideas?"
                   aria-label="Search"
                 />
-                <button class="btn btn-outline-success" type="submit">
+                <button class="btn btn-outline-success" type="submit" id="btn-search">
                   Search
                 </button>
               </form>
@@ -112,9 +112,30 @@
           <span>Embark</span> on a Journey of Flavorful Culinary Creations!
         </h1>
         <p>
-          Welcome to Fortified Recipes, your ultimate destination where tradition meets innovation in the kitchen. Our website is a treasure trove of recipes that caters to the curious beginner, the adventurous home chef, and everyone in between. With a focus on both classic favorites and contemporary twists, we provide a platform for culinary exploration that encourages experimentation and personalization. Dive into our expansive collection of recipes, curated and perfected by food enthusiasts and professional chefs alike. Fortified Recipes is more than just a website—it's a community for those who believe that the heart of the home is in the kitchen.
+          Welcome to Fortified Recipes, your ultimate destination where tradition meets innovation in the kitchen. Our website is a treasure trove of recipes that caters to the curious beginner, the adventurous home chef, and everyone in between. With a focus on both classic favorites and contemporary twists, we provide a platform for culinary exploration that encourages experimentation and personalization. Dive into our expansive collection of recipes, curated and perfected by food enthusiasts and professional chefs alike. Fortified Recipes is more than just a website—it's a community for those who believe that the heart of the home is in the kitchen. Not sure what your hungry for? Click our button down below to generate a random recipe!
         </p>
-        <a href="#" class="btn">Learn more!</a>
+            <!--random recipe-->
+        <button type="button" class="btn btn-primary" id="btn-random" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+          Generate Random Recipe
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body" id="modal-body">
+                <!-- Content will be injected here -->
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="home-img">
         <img src="./images/Home3-img.avif" style="padding-top: 32px;" alt="lotta food round these parts" />
@@ -122,7 +143,7 @@
     </section>
  
     <!--container-->
-    <section class="mid-container">
+    <section class="mid-container" id="custom-container">
       <div class="main-text">
         <h2>Popular Recipes</h2>
         <p>Check out some of the hottest dishes!</p>
@@ -161,18 +182,6 @@
         </div>
       </div>
  
-      <!-- <div class="container-box">
-        <div class="c-mainbx">
-          <div class="container-img">
-            <img src="./images/con4.jpeg" alt="">
-          </div>
-          <div class="container-text">
-            <p>Blah Blah Blah</p>
-          </div>
-        </div>
-      </div>
-    </section> -->
- 
     <!--search bar-->
     <section class="about" id="about">
       <div class="about-img"><img src="./images/Home-img.avif">
@@ -192,8 +201,8 @@
           <br>
           <button type="submit">Submit Text</button>
         </form>
-        
-        
+
+        <!-- recipes -->
       </div>
     </section>
     <section id="recipe_by_category" class="d-flex">
@@ -206,30 +215,6 @@
         <h1 id="area_name"></h1>
         <div id="area_recipes"></div>
     </section>
-
-    <!--random recipe-->
-<button type="button" class="btn btn-primary" id="btn-random" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
-  Generate Random Recipe
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body" id="modal-body">
-        <!-- Content will be injected here -->
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
 
     <!--contact bar-->
     <section class="contact" id="contact">
