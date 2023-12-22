@@ -201,32 +201,32 @@ function displayRecipesByArea(area) {
 }
 // *******************************************************************
 
-  document.querySelector('#btn-random').addEventListener('click', function() {
-    fetch('https://www.themealdb.com/api/json/v1/1/random.php')
-      .then(response => response.json())
-      .then(data => {
-        const recipe = data.meals[0]; // Get the first meal from the response
-        updateModal(recipe);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-  });
-
+document.querySelector("#btn-random").addEventListener("click", function () {
+  fetch("https://www.themealdb.com/api/json/v1/1/random.php")
+    .then((response) => response.json())
+    .then((data) => {
+      const recipe = data.meals[0]; // Get the first meal from the response
+      updateModal(recipe);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+});
 
 function updateModal(recipe) {
   // Update the modal title with the recipe name
-  document.getElementById('exampleModalCenterTitle').textContent = recipe.strMeal;
-  
+  document.getElementById("exampleModalCenterTitle").textContent =
+    recipe.strMeal;
+
   // Build the modal body content
   const modalBodyContent = `
     <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}" class="img-fluid" />
     <p>${recipe.strInstructions}</p>
   `;
-  
+
   // Update the modal body with the new content
-  document.getElementById('modal-body').innerHTML = modalBodyContent;
-  
+  document.getElementById("modal-body").innerHTML = modalBodyContent;
+
   // Bootstrap's way to show the modal using jQuery
-  $('#exampleModalCenter').modal('show');
+  $("#exampleModalCenter").modal("show");
 }
