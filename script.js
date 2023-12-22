@@ -74,7 +74,7 @@ function displayRecipes(category) {
           recipeDetailsArray.forEach((recipeDetails, index) => {
             const recipeDiv = document.createElement("div");
             recipeDiv.classList.add("recipe");
-            recipeDiv.innerHTML = `<button id="fav_btn" type="button" class="btn-fav">Add to favorites</button>`;
+            recipeDiv.innerHTML = `<button type="button" class="btn_fav">Add to favorites</button>`;
 
             // Display the name of the recipe
             const recipeName = document.createElement("h3");
@@ -90,7 +90,6 @@ function displayRecipes(category) {
 
             // Append the recipeDiv to the recipe_container
             recipe_container.appendChild(recipeDiv);
-            fav_btn;
           });
         })
         .catch((errors) => {
@@ -178,7 +177,7 @@ function displayRecipesByArea(area) {
           recipeDetailsArray.forEach((recipeDetails, index) => {
             const recipeDiv = document.createElement("div");
             recipeDiv.classList.add("recipe");
-            recipeDiv.innerHTML = `<button id="fav_btn" type="button" class="btn-fav">Add to favorites</button>`;
+            recipeDiv.innerHTML = `<button type="button" class="fav_btn">Add to favorites</button>`;
             const recipeName = document.createElement("h3");
             recipeName.textContent = recipes[index].strMeal;
             recipeDiv.appendChild(recipeName);
@@ -222,36 +221,37 @@ function updateModal(recipe) {
   // Build the modal body content
   const modalBodyContent = `
     <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}" class="img-fluid" />
-    <p>${recipe.strInstructions}</p><button id="fav_btn" type="button" class="btn-fav">Add to favorites</button>
+    <p>${recipe.strInstructions}</p><button type="button" class="fav_btn">Add to favorites</button>
   `;
 
   // Update the modal body with the new content
   document.getElementById("modal_body").innerHTML = modalBodyContent;
   exampleModalCenter.addEventListener("click", (evt) => {
-    let clicker = 0;
-    while (clicker < 1) {
-      if (evt.target.classList.contains("btn-fav")) {
-        favorites.push(exampleModalCenter);
-        clicker++;
-      }
+    if (evt.target.classList.contains("fav_btn")) {
+      favorites.push(exampleModalCenter);
+      addFavorite();
     }
-    const currentUser = userIcon.textContent;
-    console.log(currentUser);
-    const userFav = { userId: currentUser, fav: favorites };
-    console.log(userFav);
-    fetch(`http://localhost:3001/addfavorites`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(userFav),
-    })
-      .then((response) => response.json())
-      .then((responsestate) => console.log(responsestate))
-      .catch((err) => {
-        console.log(err);
-      });
+
     // Bootstrap's way to show the modal using jQuery
     $("#exampleModalCenter").modal("show");
   });
 }
+function addFavorite() {
+  const currentUser = userIcon.textContent;
+  console.log(currentUser);
+  const userFav = { userId: currentUser, fav: favorites };
+  console.log(userFav);
+  fetch(`http://localhost:3001/addfavorites`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(userFav),
+  })
+    .then((response) => response.json())
+    .then((responsestate) => console.log(responsestate[currentUser]))
+    .catch((err) => {
+      console.log(err);
+    });
+}
+addFavorite();

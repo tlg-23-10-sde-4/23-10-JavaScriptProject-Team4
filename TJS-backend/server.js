@@ -10,7 +10,6 @@ db.once("open", () => console.log("Successfully Connected to our mongodb"));
 const app = express();
 
 const users = [];
-let current_user = "";
 const favorites = {};
 
 const PORT = process.env.PORT || 3001;
@@ -57,13 +56,25 @@ app.post("/addfavorites", function (req, res) {
   const fav = req.body.fav;
   console.log(userId);
   console.log(fav);
-  favorites[userId] = [favorites[userId], ...fav.values()];
-  //   } else {
-  // Assume fav is a single item, push it to the array
-  //     favorites[userId].push(fav);
-  //   }
+  console.log(favorites[userId]);
+  //   favorites[userId] = favorites[userId].concat(fav);
+  if (favorites[userId] === undefined) {
+    favorites[userId] = fav;
+    res.send(favorites[userId]);
+  } else {
+    let userFav = favorites[userId].concat(fav);
+    favorites[userId] = userFav;
+    res.send(favorites[userId]);
+  }
 
-  res.redirect("/addfavorites");
+  // fav.forEach((index) => {
+  //   favorites[userId].push(index);
+  // });
+
+  //   favorites[userId] = [favorites[userId], ...fav.values()];
+  //   } else {
+
+  //   res.redirect("/addfavorites");
 });
 
 app.get("/addfavorites", function (req, res) {
