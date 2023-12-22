@@ -10,10 +10,7 @@ db.once("open", () => console.log("Successfully Connected to our mongodb"));
 const app = express();
 
 const users = [];
-const favorites = [];
-const breakfast = [];
-const lunch = [];
-const dinner = [];
+const favorites = {};
 
 const PORT = process.env.PORT || 3001;
 
