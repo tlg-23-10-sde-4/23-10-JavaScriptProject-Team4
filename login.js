@@ -3,7 +3,7 @@ createLogInPage();
 function createLogInPage() {
   const loginPage = document.createElement("div");
   loginPage.style.width = "100vw";
-  loginPage.style.height = "100vw";
+  loginPage.style.height = "100%";
   loginPage.innerHTML = `<div id="loginPage">
     <div id="login_signup_card">
       <input type="text" id="username" placeholder="enter username" />
