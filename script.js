@@ -225,7 +225,7 @@ function updateModal(recipe) {
   `;
 
   // Update the modal body with the new content
-  document.getElementById("modal_body").innerHTML = modalBodyContent;
+  document.getElementById("modal-body").innerHTML = modalBodyContent;
   exampleModalCenter.addEventListener("click", (evt) => {
     if (evt.target.classList.contains("fav_btn")) {
       favorites.push(exampleModalCenter);
