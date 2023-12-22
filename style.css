@@ -130,8 +130,9 @@ section {
   letter-spacing: 1px;
 }
 
-.btn-random{
+#btn-random{
   --bs-btn-hover-bg: black !important;
+  --bs-btn-active-bg: black !important;
 }
 
 .btn-search{
@@ -432,6 +433,4 @@ button[type="submit"]:hover {
   background-color: black;
 }
 
-#category_container {
-  padding-top: 25px;
-}
+#cate
